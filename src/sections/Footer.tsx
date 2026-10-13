@@ -8,7 +8,7 @@ import { useLocalTime } from '@/hooks/useLocalTime'
 import { usePalette } from '@/hooks/usePalette'
 
 const TICKER_LINE = `${ticker.join('  ✦  ')}  ✦  `
-const WORDMARK = 'ARI CALDER'
+const WORDMARK = 'TAHIR WIGUNA'
 
 export function Footer() {
   const calm = useReducedMotion() ?? false
@@ -53,7 +53,7 @@ export function Footer() {
 
         <div className="label mt-xl flex flex-wrap items-center justify-between gap-x-lg gap-y-sm text-muted">
           <span className="text-ink">
-            ari<span className="text-accent">.</span>calder
+            tahir<span className="text-accent">.</span>wiguna
           </span>
           <span>© 2026 {profile.name}</span>
           <span>

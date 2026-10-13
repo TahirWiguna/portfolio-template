@@ -1,4 +1,4 @@
-# Ari Calder — portfolio
+# Muhamad Tahir Wiguna — portfolio
 
 A one-page portfolio for a (fictional) senior software engineer, styled as an instrument console: near-black glass, phosphor-green signal and an ice-blue secondary. Every section runs its own live field from [React Bits](https://reactbits.dev). Built with React 19, Vite 8 and Tailwind CSS 4.
 
@@ -77,4 +77,4 @@ if (!response.ok) throw new Error('send failed')
 - Every animation has a reduced-motion path, and pointer-only effects are off on touch screens.
 - The form has inline validation, `aria-invalid` and `aria-describedby`, moves focus to the first invalid field, and announces sending, success and failure.
 
-The content is fictional: the person, the companies and the quote are all placeholders. `ari.calder@example.com` uses a reserved domain, so no mail can reach a real inbox.
+Name, email and GitHub are real. Role, city, projects, experience and the quote are still placeholders in `src/content.ts`.

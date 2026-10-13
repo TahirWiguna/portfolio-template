@@ -1,15 +1,15 @@
 export const profile = {
-  name: 'Ari Calder',
+  name: 'Muhamad Tahir Wiguna',
   role: 'Senior software engineer',
   focus: 'event-driven backends and the interfaces on top of them',
   location: 'Lisbon, Portugal',
   city: 'Lisbon',
   timeZone: 'Europe/Lisbon',
   availability: 'Open to senior & staff roles',
-  email: 'ari.calder@example.com',
+  email: 'mtahirwiguna@gmail.com',
   resumeUrl: '/resume.pdf',
   links: [
-    { label: 'GitHub', href: 'https://github.com/' },
+    { label: 'GitHub', href: 'https://github.com/TahirWiguna' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
   ],
 } as const
@@ -146,7 +146,7 @@ export const about = {
 } as const
 
 export const quote = {
-  text: 'Ari makes hard systems feel calm. The quarter Ari joined, our on-call rotation finally went quiet.',
+  text: 'Tahir makes hard systems feel calm. The quarter Tahir joined, our on-call rotation finally went quiet.',
   author: 'Mara Ilunga',
   title: 'VP Engineering, Orbitwell Logistics',
 } as const

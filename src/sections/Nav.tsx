@@ -20,7 +20,7 @@ function Wordmark() {
       aria-label={`${profile.name}, back to top`}
       className="label rounded-pill px-xs text-ink transition-[color] duration-(--dur-micro) ease-out hover:text-accent"
     >
-      ari<span className="text-accent">.</span>calder
+      tahir<span className="text-accent">.</span>wiguna
     </a>
   )
 }

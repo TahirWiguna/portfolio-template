@@ -13,12 +13,12 @@ import { usePalette } from '@/hooks/usePalette'
 const GridScan = lazy(() => import('@/components/bits/GridScan'))
 const TechText = lazy(() => import('@/components/bits/TechText'))
 
-const NAME = 'ARI CALDER'
+const NAME = 'TAHIR WIGUNA'
 
 function Readout() {
   const time = useLocalTime(profile.timeZone)
   const rows = [
-    ['ID', 'ari.calder'],
+    ['ID', 'tahir.wiguna'],
     ['Role', profile.role],
     ['Loc', `${profile.city} · ${time}`],
   ]
