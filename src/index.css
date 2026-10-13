@@ -1,0 +1,204 @@
+/* Hallmark | genre: atmospheric | macrostructure: bespoke "instrument console" (one live field per section)
+   theme: custom | vibe: "black glass, phosphor light, quiet precision" | paper: oklch(14% 0.008 160) | accent: oklch(86% 0.19 152)
+   display: Hubot Sans | body: Mona Sans | mono: Martian Mono | axes: dark / geometric-sans / chromatic-phosphor
+   nav: N5 | footer: Ft8 marquee + wordmark | enrichment: React Bits fields per section | studied: no | context: user-provided */
+@import "tailwindcss";
+@import "../tokens.css";
+
+@theme inline {
+  --color-*: initial;
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-paper-3: var(--color-paper-3);
+  --color-paper-4: var(--color-paper-4);
+  --color-rule: var(--color-rule);
+  --color-field: var(--color-field);
+  --color-muted: var(--color-muted);
+  --color-ink-2: var(--color-ink-2);
+  --color-ink: var(--color-ink);
+  --color-accent: var(--color-accent);
+  --color-focus: var(--color-focus);
+  --color-accent-ink: var(--color-accent-ink);
+  --color-accent-wash: var(--color-accent-wash);
+  --color-glacier: var(--color-glacier);
+  --color-danger: var(--color-danger);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --text-*: initial;
+  --text-meta: var(--text-meta);
+  --text-body: var(--text-body);
+  --text-lead: var(--text-lead);
+  --text-heading: var(--text-heading);
+  --text-title: var(--text-title);
+  --text-display: var(--text-display);
+
+  --spacing-3xs: var(--space-3xs);
+  --spacing-2xs: var(--space-2xs);
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+
+  --radius-*: initial;
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --ease-*: initial;
+  --ease-out: var(--ease-out);
+  --ease-in: var(--ease-in);
+  --ease-in-out: var(--ease-in-out);
+  --ease-icon: var(--ease-icon);
+}
+
+@layer base {
+  html {
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    min-height: 100svh;
+    background-color: var(--color-paper);
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 380; /* light text on near-black reads heavier than its weight */
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+
+  section[id] {
+    scroll-margin-top: calc(var(--nav-height) + var(--space-lg));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 150ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 150ms !important;
+    }
+  }
+}
+
+@layer components {
+  .page-frame {
+    width: 100%;
+    max-width: var(--page-max);
+    margin-inline: auto;
+    padding-inline: var(--page-gutter);
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-size: var(--text-title);
+    font-weight: 800;
+    font-stretch: 125%;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+    font-stretch: 100%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-meta);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .raised {
+    background-color: var(--color-paper-2);
+    box-shadow: var(--shadow-raised);
+  }
+
+  .glass {
+    background-color: var(--glass);
+    backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: var(--shadow-raised);
+  }
+
+  .field-fallback {
+    background:
+      radial-gradient(55% 60% at 50% 0%, color-mix(in oklch, var(--color-accent) 14%, transparent), transparent),
+      radial-gradient(40% 45% at 90% 90%, color-mix(in oklch, var(--color-glacier) 8%, transparent), transparent);
+  }
+
+  .fade-edges {
+    mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+  }
+
+  .pass-through {
+    pointer-events: none; /* lets the live field underneath receive the pointer between controls */
+  }
+
+  .pass-through :is(a, button, input, textarea, label, [data-interactive]) {
+    pointer-events: auto;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility animate-rise-in {
+  animation: rise-in var(--dur-long) var(--ease-out) both;
+}
